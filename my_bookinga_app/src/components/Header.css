@@ -1,0 +1,19 @@
+#MenuHedder {
+    Background-color: #3366ff;
+    background-image: url('./../Img/Confetty_Photo_by_Jason_Leung_on_Unsplash.jpg');
+    background-size: cover;
+    color: #ffffff;
+    height: 90px;  
+    text-align: center;
+    font-weight: bold;
+  }
+
+  #MenuFotter {
+    Background-color: #3366ff;
+    background-image: url('./../Img/Confetty_Photo_by_Jason_Leung_on_Unsplash.jpg');
+    background-size: cover;
+    color: #ffffff;
+    height: 30px;  
+    text-align: center;
+    font-weight: bold;
+  }

@@ -1,16 +1,19 @@
 //APP Defult window
-
 import React from 'react';
-import Header from "./components/Header";
-import Movie from "./components/MovieList/Movie";
-import Fotter from "./components/Fotter";
+import Header from './Components/Header';
+
+import DateSort from './Components/DateSort';
+import Movies from './Components/Movies';
+
 
 function App() {
   return (
     <>
       <Header/>
-      <Movie />
-      <Fotter />
+      <>
+      <DateSort />
+      <Movies />
+      </>
     </>
   );
 }

@@ -3,6 +3,9 @@ html, body {
 }
 
 body {
+  background-image: url('backgrund_popcorn_Photo_by_twinsfisch_on_Unsplash.jpg');
+  background-size: cover;
+  background-position: bottom;
   display: flex;
   flex-direction: column;
 }
@@ -10,11 +13,6 @@ body {
 body > div {
   flex-grow: 1;
   overflow-y: scroll;
-}
-
-.BarNotes {
-  Background-color:Blue;
-  height: 70px;
 }
 
 #MovieInfo {
@@ -32,7 +30,7 @@ body > div {
   margin-left: 50px;
   margin-right: 50px;
   margin-bottom: 20px;
-  margin-top: 30px;
+  margin-top: 60px;
 }
 
 #MovePicture {

@@ -1,0 +1,12 @@
+#MovieHolder {
+    margin-top: 40px;
+    width: 70%;
+    align-self: center;
+    overflow: hidden;
+}
+
+#ThisMovie {
+    background-color: #00a8bd;
+    height: 130px;
+    width: 100px;
+}
