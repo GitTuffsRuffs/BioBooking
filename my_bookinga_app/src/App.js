@@ -5,15 +5,16 @@ import Header from './Components/Header';
 import DateSort from './Components/DateSort';
 import Movies from './Components/Movies';
 
+import './App.css';
 
 function App() {
   return (
     <>
       <Header/>
-      <>
-      <DateSort />
-      <Movies />
-      </>
+      <div id="ContentBox">
+        <DateSort />
+        <Movies />
+      </div>
     </>
   );
 }

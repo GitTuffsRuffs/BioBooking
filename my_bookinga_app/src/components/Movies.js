@@ -9,12 +9,12 @@ function Movies() {
   return (
     <>
         <div id="MovieHolder">
-            
             <div id="ThisMovie">
-                <img alt="Movie poster" href="" />
+                <img alt="Movie poster" href="X" />
                 <span text="Movie Title"></span>
                 <a href="" onClick=""></a>
             </div>
+            <span>Move Title</span>
         </div>   
     </>
   );

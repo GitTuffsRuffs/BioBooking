@@ -1,7 +1,6 @@
 #MovieHolder {
     margin-top: 40px;
-    width: 70%;
-    align-self: center;
+    width: 100%;
     overflow: hidden;
 }
 

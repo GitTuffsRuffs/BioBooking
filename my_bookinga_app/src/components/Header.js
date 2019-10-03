@@ -6,9 +6,7 @@ class Header extends React.Component {
         return (
             <header id="MenuHedder">
                 <div>
-                    <br/>
-                    <span>KID BIO</span>
-                    <br/>
+                    <h1>KID CINEMA!</h1>
                     <span>Home</span><span> | </span>
                     <span>Movies</span><span> | </span>
                     <span>Info</span><span> | </span>
