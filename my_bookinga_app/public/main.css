@@ -1,0 +1,58 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+body > div {
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+
+.BarNotes {
+  Background-color:Blue;
+  height: 70px;
+}
+
+#MovieInfo {
+  display: flex-end;
+  Background-color:LightBlue;
+  height: auto;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+#MovieText {
+  Background-color: Green;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+#MovePicture {
+  background-color: red;
+  height: 100px;
+  display: inline-block;
+}
+
+#MovieTitle {
+  display: inline-block;
+}
+
+#MoveShowings {
+  Background-color:LightGreen;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+#MenuFotter {
+  margin-bottom: 0px;
+}
