@@ -1,7 +1,18 @@
-#MovieHolder {
+.MovieHolder {
     margin-top: 40px;
-    width: 100%;
+    width: auto;
     overflow: hidden;
+}
+
+.MovieGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.MovieGrid > div {
+    width: auto;
+    margin: 8px;
 }
 
 #ThisMovie {

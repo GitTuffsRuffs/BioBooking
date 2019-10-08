@@ -1,7 +1,12 @@
 #DateSort {
-    height: 40px;
+    height: auto;
     display: flex; 
     width: 100%;
+    overflow: hidden;
+}
+
+#DateSort > div {
+    flex-shrink: 1;
 }
 
 .inputs {

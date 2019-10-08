@@ -1,5 +1,11 @@
 #ContentBox {
-    width: 70%;
+    width: 100%;
+    padding: 0 15%;
     align-self: center;
-    overflow: hidden;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+#ContenBox::-webkit-scrollbar {
+    width: 0 !important;
 }
