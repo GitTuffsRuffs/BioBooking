@@ -2,6 +2,7 @@ import React from 'react';
 import {Route, Switch} from "react-router-dom";
 import Movies from './Movies';
 import Info from './Info';
+import Login from './Login';
 
 class ContentBox extends React.Component {
     render() {
@@ -14,7 +15,9 @@ class ContentBox extends React.Component {
                 <Route path="/info">
                     <Info />
                 </Route>
-                <Route path="/login">Login</Route>
+                <Route path="/login">
+                    <Login />
+                </Route>
                 <Route>404</Route>
             </Switch>
         </div>
