@@ -14,20 +14,16 @@ class Movies extends React.Component {
     this.state = { movies: [] };
   }
 
-  componentDidMount() {
-    fetch("http://localhost:54426/api/movies")
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        this.setState({ movies: data })
-      });
+  async componentDidMount() {
+    const movies = await this.props.BioApi.movies();
+    this.setState({ movies });
   }
 
   renderOneMoive(movie){
     return (
       <div className="MovieHolder">
-        <div id="ThisMovie">
-          <img alt="Movie poster" onClick={(event) => event.currentTarget.parentElement.parentElement.children[1].click()} />
+        <div>
+          <img src={movie.image_url} alt="Movie poster" onClick={(event) => event.currentTarget.parentElement.parentElement.children[1].click()} />
         </div>
         <Link to={"/movie/"+movie.id}>{movie.title}</Link>
       </div>
@@ -37,7 +33,7 @@ class Movies extends React.Component {
   render() {
     return (
       <>
-        <DateSort />
+        <DateSort BioApi={this.props.BioApi} />
         <div className="MovieGrid">
             {this.state.movies.map(this.renderOneMoive)}
         </div>

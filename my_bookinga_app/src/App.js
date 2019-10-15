@@ -5,10 +5,13 @@ import './App.css';
 
 import Header from './Components/Header';
 import ContentBox from './Components/ContectBox';
+import BioApi from './Services/BioApi';
+import Login from './Components/Login';
 
 class App extends React.Component {
   constructor () {
     super();
+    this.api = new BioApi();
     this.state = { pageToDisplay: "HOME" };
   }
 
@@ -16,7 +19,8 @@ class App extends React.Component {
   return (
     <Router>
       <Header />
-      <ContentBox />
+      <ContentBox BioApi={this.api} />
+      <Login BioApi={this.api} />
     </Router>
   )};
 }

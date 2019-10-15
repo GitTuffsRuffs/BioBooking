@@ -1,22 +1,25 @@
 import React from 'react';
-import {Route, Switch} from "react-router-dom";
+import {Redirect,Route, Switch} from "react-router-dom";
 import Movies from './Movies';
+import Movie from './Movie';
 import Info from './Info';
-import Login from './Login';
 
 class ContentBox extends React.Component {
     render() {
     return (
         <div id="ContentBox">
             <Switch>
+                <Redirect exact from ="/" to ="/movies"/>
+                
                 <Route path="/movies">
-                    <Movies />
+                    <Movies BioApi={this.props.BioApi} />
                 </Route>
+                <Route path="/movie/:id">
+                    <Movie BioApi={this.props.BioApi} />
+                </Route>
+
                 <Route path="/info">
                     <Info />
-                </Route>
-                <Route path="/login">
-                    <Login />
                 </Route>
                 <Route>404</Route>
             </Switch>

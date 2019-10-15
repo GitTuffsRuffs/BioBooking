@@ -3,21 +3,38 @@
     background-image: url('./../Img/Confetty_Photo_by_Jason_Leung_on_Unsplash.jpg');
     background-size: cover;
     color: #ffffff;
-    height: 100px;  
-    text-align: center;
+    height: 100px;
     font-weight: bold;
+    display: flex;
+    align-items: baseline;
+    padding-top: 20px;
   }
 
-  #MenuFotter {
-    Background-color: #3366ff;
-    background-image: url('./../Img/Confetty_Photo_by_Jason_Leung_on_Unsplash.jpg');
-    background-size: cover;
-    color: #ffffff;
-    height: 30px;  
-    text-align: center;
-    font-weight: bold;
-  }
+#MenuHedder > h1 {
+  margin: 0;
+  margin-left: 20px;
+  margin-right: 30px;
+  font-size: 3em;
+  display: inline-block;
+  text-shadow: #002e2e 5px 5px 3px;
+}
 
-h1 {
-  margin-bottom: 0px;
+#MenuHedder > a, 
+#MenuHedder > span {
+  display: inline-block;
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  text-shadow: #002e2e 5px 5px 3px;
+  font-size: 1.8em;
+}
+
+#MenuHedder > a:hover, 
+#MenuHedder > span:hover {
+  text-shadow: #ff1db4 5px 5px 3px;
+}
+
+#MenuHedder > a.active {
+  text-shadow: #ff1db4 5px 5px 3px;
 }

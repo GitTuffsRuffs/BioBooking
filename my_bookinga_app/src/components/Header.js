@@ -1,18 +1,20 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 import './Header.css';
 
 class Header extends React.Component {
+    showLogin() {
+        document.getElementById('LoginShadow').style.display='block';
+    }
+
     render() {
         return (
             <header id="MenuHedder">
-                <div>
                     <h1>KID CINEMA!</h1>
-                    <Link to="/movies">Movies</Link><span> | </span>
-                    <Link to="/info">Info</Link><span> | </span>
-                    <Link to="/login">Login</Link>
-                </div>
+                    <NavLink to="/movies" activeClassName="active">Movies</NavLink>
+                    <NavLink to="/info" activeClassName="active">Info</NavLink>
+                    <span onClick={this.showLogin} >Login</span>
             </header>
         );
     }

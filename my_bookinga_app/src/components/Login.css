@@ -1,0 +1,65 @@
+#LoginShadow {
+    background-color: rgba(0,0,0,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+
+#LoginShadow > form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#Login {
+    background-color: white;
+    border: solid gray 1px;
+    padding: 10px 40px;
+    border-radius: 25px;
+    position: relative;    
+}
+
+#Login > p {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 0;
+    text-align: center;
+}
+
+#Login > label {
+    display: block;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+#Login > label > span {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+}
+
+#Login input[type="submit"] {
+    background-color: #00a8bd;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#LoginClose {
+    color: red;
+    display: inline-block;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+    position: absolute;
+    top: -5px;
+    right: 8px;
+    cursor: pointer;
+}
