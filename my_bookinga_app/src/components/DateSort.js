@@ -3,27 +3,60 @@ import React from 'react';
 import './DateSort.css';
 
 class DateSort extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { cinemas: [] };
+    }
+
+    async componentDidMount() {
+        const cinemas = await this.props.BioApi.cinemas();
+        this.setState({ cinemas });
+    }
+
     render() {
+        const dateOptions = [
+            (<option value="All">Date: All</option>),
+            (<option value="Monday">Date: Idag</option>),
+            (<option value="Monday">Date: Imorgon</option>),
+            (<option value="Monday">Date: Next</option>)
+        ];
+
+        const cinemaOptions = [
+            (<option value="CinemaAll">All Cinemas</option>),
+        ];
+
+        for(const cinema of this.state.cinemas) {
+            cinemaOptions.push(
+                (<option value={cinema.id}>{cinema.name}</option>)
+            )
+        }
+
+        let ageOptions = [
+            (<option value="baby">Age: All</option>),
+            (<option value="baby">Age: 0-6</option>),
+            (<option value="kid">Age: 7-15</option>)
+        ];
+
+        if(this.props.movie != null) {
+            ageOptions = [
+                (<option value="baby">Age: {this.props.movie.age_limit}</option>)
+            ];
+        }
+
         return (
-            <div id="DateSort">
+            <div className="DateSort">
                 <div>
                 <select>
-                    <option value="Monday">Date: All</option>
-                    <option value="Monday">Date: Idag</option>
-                    <option value="Monday">Date: Imorgon</option>
-                    <option value="Monday">Date: Next</option>
+                    {dateOptions}
                 </select>
 
                 <select>
-                    <option value="Cinema1">All Cinemas</option>
-                    <option value="Cinema1">Cinema 1</option>
-                    <option value="Cinema2">Cinema 2</option>
+                    {cinemaOptions}
                 </select>
 
                 <select>
-                    <option value="baby">Age: All</option>
-                    <option value="baby">Age: 0-6</option>
-                    <option value="kid">Age: 7-15</option>
+                    {ageOptions}
                 </select>
                 </div>
             </div>

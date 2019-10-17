@@ -1,4 +1,4 @@
-#DateSort {
+.DateSort {
     margin-top: 20px;
     height: auto;
     display: flex; 
@@ -6,7 +6,7 @@
     overflow: hidden;
 }
 
-#DateSort > div {
+.DateSort > div {
     background-color: #d5ae63;
     background-repeat: repeat-x;
     height: auto;
@@ -16,7 +16,7 @@
     align-items: center;
 }
 
-#DateSort::before {
+.DateSort::before {
     content: " ";
     display: inline-block;
     height: 80px;
@@ -24,7 +24,7 @@
     background-image: url('./../Img/ticket_left.png');
 }
 
-#DateSort::after {
+.DateSort::after {
     content: " ";
     display: inline-block;
     height: 80px;
@@ -32,11 +32,11 @@
     background-image: url('./../Img/ticket_right.png');
 }
 
-#DateSort > div {
+.DateSort > div {
     flex-shrink: 1;
 }
 
-#DateSort select {
+.DateSort select {
     background-color: #d5ae63;
     color: #ffffff;
     font-size: 120%;
@@ -47,6 +47,6 @@
     flex-grow: 1;
 }
 
-#DateSort select:first-child { 
+.DateSort select:first-child { 
     border-left-color: #5f4e2d;
 }

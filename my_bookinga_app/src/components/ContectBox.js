@@ -17,7 +17,6 @@ class ContentBox extends React.Component {
                 <Route path="/movie/:id">
                     <Movie BioApi={this.props.BioApi} />
                 </Route>
-
                 <Route path="/info">
                     <Info />
                 </Route>

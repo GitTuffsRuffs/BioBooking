@@ -1,6 +1,8 @@
 //Show the info of one movie.
 import React from "react";
 import {withRouter} from "react-router-dom";
+import DateSort from "./DateSort";
+import './Showings.css';
 
 class Showings extends React.Component {
 
@@ -30,19 +32,14 @@ class Showings extends React.Component {
         return (
             <li>
                 <span>
-                {startDate.toISOString().slice(11,16)} - &nbsp;
-                {startDate.getDate()}/
-                {startDate.getMonth()} 
-                </span>
-                <br/>
-                <span>
-                    {show.auditorium.name} | 
-                    {show.subtitle_language} | 
-                    {show.spoken_language} | 
+                {startDate.toISOString().slice(11,16)}
                 </span>
                 <span>
-                    {show.seats_left} platser kvar
-                    <button>Till bokning</button>
+                    <strong>{show.auditorium.name}</strong><br/>
+                    <span>{show.spoken_language} | Subtitle: {show.subtitle_language}</span> 
+                </span>
+                <span>
+                    {show.seats_left} platser kvar <button className="BookingButton">Till bokning</button>
                 </span>
             </li>
         );
@@ -58,19 +55,7 @@ class Showings extends React.Component {
 
         return (
             <>
-                <select className="inputs">
-                    <option value="Monday">Date: All</option>
-                    <option value="T">Date: Idag</option>
-                    <option value="O">Date: Imorgon</option>
-                    <option value="Tors">Date: Next</option>
-                </select>
-
-                <select className="inputs">
-                    <option value="Cin1">All Cinemas</option>
-                    <option value="Cinema1">Cinema 1</option>
-                    <option value="Cinema2">Cinema 2</option>
-                </select>
-
+                <DateSort movie={this.props.movie} BioApi={this.props.BioApi} />
                 <ul className="Showlist">
                     {this.state.shows.map(this.renderOneShow.bind(this))}
                 </ul>

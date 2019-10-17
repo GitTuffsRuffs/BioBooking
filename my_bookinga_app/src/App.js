@@ -6,7 +6,7 @@ import './App.css';
 import Header from './Components/Header';
 import ContentBox from './Components/ContectBox';
 import BioApi from './Services/BioApi';
-import Login from './Components/Login';
+import Popup from './Components/Popup';
 
 class App extends React.Component {
   constructor () {
@@ -20,7 +20,7 @@ class App extends React.Component {
     <Router>
       <Header />
       <ContentBox BioApi={this.api} />
-      <Login BioApi={this.api} />
+      <Popup BioApi={this.api} />
     </Router>
   )};
 }

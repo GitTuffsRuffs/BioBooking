@@ -33,7 +33,7 @@ class Movies extends React.Component {
   render() {
     return (
       <>
-        <DateSort BioApi={this.props.BioApi} />
+        <DateSort movie={null} BioApi={this.props.BioApi} />
         <div className="MovieGrid">
             {this.state.movies.map(this.renderOneMoive)}
         </div>

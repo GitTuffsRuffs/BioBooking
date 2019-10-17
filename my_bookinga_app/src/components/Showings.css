@@ -1,0 +1,37 @@
+.Showlist {
+    background-color: rgba(255,255,255,0.7);
+    padding: 0;
+}
+
+.Showlist > li {
+    list-style: none;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: dashed gray 1px;
+}
+
+.Showlist > li:hover {
+    background-color: rgba(0, 168, 189, 0.3);
+}
+
+.Showlist > li > span:first-child {
+    padding: 10px;
+}
+
+.Showlist > li > span:nth-child(2) {
+    flex-grow: 1;
+}
+
+.Showlist > li > span:last-child {
+    padding: 10px;
+}
+
+.BookingButton {
+    background-color: #00a8bd;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}

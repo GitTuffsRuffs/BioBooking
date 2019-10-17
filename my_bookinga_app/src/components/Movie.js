@@ -2,6 +2,7 @@
 import React from "react";
 import {withRouter} from "react-router-dom";
 import Showings from "./Showings";
+import './Movie.css';
 
 class Movie extends React.Component {
 
@@ -32,25 +33,24 @@ class Movie extends React.Component {
             <>
                 <div id="MovieInfo">
                     <img id="MovePicture" alt="movie poster" src={this.state.movie.image_url} />
-                </div>
-
-                <div id="MovieTitle">
-                    <h1>{this.state.movie.title}</h1>
-                    <span>
-                        Age: {this.state.movie.age_limit} | 
-                        Time: {this.state.movie.length} | 
-                        {this.state.movie.language} | 
-                        {this.state.movie.category}
-                    </span>
+                    
+                    <div id="MovieTitle">
+                        <h1>{this.state.movie.title}</h1>
+                        <label>
+                            Age: {this.state.movie.age_limit} |&nbsp;
+                            Time: {this.state.movie.length} |&nbsp;
+                            {this.state.movie.language} |&nbsp;
+                            {this.state.movie.category}
+                        </label>
+                    </div>                    
                 </div>
 
                 <div id="MovieText">
-                    <p>{this.state.movie.description}</p>
+                    {this.state.movie.description}
                 </div>
                 
-                <Showings BioApi={this.props.BioApi}/>
+                <Showings movie={this.state.movie} BioApi={this.props.BioApi}/>
             </>
-      
         );
     }
 }

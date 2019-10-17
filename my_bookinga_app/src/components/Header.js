@@ -5,7 +5,7 @@ import './Header.css';
 
 class Header extends React.Component {
     showLogin() {
-        document.getElementById('LoginShadow').style.display='block';
+        document.getElementById('PopupShadow').style.display='block';
     }
 
     render() {
