@@ -18,7 +18,7 @@ class App extends React.Component {
   render() {
   return (
     <Router>
-      <Header />
+      <Header Logedin={true} BioApi={this.api} />
       <ContentBox BioApi={this.api} />
       <Popup BioApi={this.api} />
     </Router>

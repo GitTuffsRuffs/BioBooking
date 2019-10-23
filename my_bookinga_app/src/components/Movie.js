@@ -15,7 +15,7 @@ class Movie extends React.Component {
         const movie = await this.props.BioApi.movie(id);
         this.setState({ movieid: id, movie })
     }
-
+    
     render() {
         const movieid = this.props.match.params.id;
 

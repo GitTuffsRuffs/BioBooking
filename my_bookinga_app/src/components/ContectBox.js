@@ -3,6 +3,7 @@ import {Redirect,Route, Switch} from "react-router-dom";
 import Movies from './Movies';
 import Movie from './Movie';
 import Info from './Info';
+import MyBookings from './MyBookings';
 
 class ContentBox extends React.Component {
     render() {
@@ -19,6 +20,9 @@ class ContentBox extends React.Component {
                 </Route>
                 <Route path="/info">
                     <Info />
+                </Route>
+                <Route path="/mybookings">
+                    <MyBookings BioApi={this.props.BioApi} />
                 </Route>
                 <Route>404</Route>
             </Switch>

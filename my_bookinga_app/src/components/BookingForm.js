@@ -1,13 +1,23 @@
 import React from 'react';
-//import './Bookings.css';
+import './BookingForm.css';
 
-class Bookings extends React.Component {
+class BookingForm extends React.Component {
 
-  render() {
-    return (
-      <>
-        <div id="BookingShadow" onClick={this.close}>
-            <form>
+    close() {
+        document.getElementById('PopupShadow').click();
+    }
+
+    maybeClose(event) {
+        if(event.target.tagName === "FORM") {
+            document.getElementById('PopupShadow').click();
+        } else {
+            event.preventDefault();
+        }
+    }
+    
+    render() {
+        return (
+            <form id="BookingForm" onClick={this.maybeClose}>
                 <div id="Booking">
                     <label>
                         <span>Bio film</span>
@@ -39,12 +49,11 @@ class Bookings extends React.Component {
                     <label>
                         <input type="submit" value="validate" />
                     </label>
+                    <span id="BookingClose" onClick={this.close}>X</span>
                 </div>
             </form>
-        </div>
-    </>
     );
   }
 }
 
-export default Bookings;
+export default BookingForm;

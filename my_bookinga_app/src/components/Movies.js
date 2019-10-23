@@ -28,7 +28,7 @@ class Movies extends React.Component {
         <Link to={"/movie/"+movie.id}>{movie.title}</Link>
       </div>
     );
-  };
+  }
 
   render() {
     return (

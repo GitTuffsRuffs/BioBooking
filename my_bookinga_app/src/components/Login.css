@@ -33,6 +33,7 @@
     font-weight: bold;
     margin-top: 20px;
     cursor: pointer;
+    margin-right: 10px;
 }
 
 #LoginClose {

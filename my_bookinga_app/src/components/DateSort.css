@@ -11,7 +11,6 @@
     background-repeat: repeat-x;
     height: auto;
     display: flex;
-    width: 100%;
     overflow: hidden;
     align-items: center;
 }
@@ -20,7 +19,7 @@
     content: " ";
     display: inline-block;
     height: 80px;
-    width: 77px;
+    width: 66px;
     background-image: url('./../Img/ticket_left.png');
 }
 
@@ -28,12 +27,13 @@
     content: " ";
     display: inline-block;
     height: 80px;
-    width: 77px;
+    width: 66px;
     background-image: url('./../Img/ticket_right.png');
 }
 
 .DateSort > div {
     flex-shrink: 1;
+    flex-grow: 1;
 }
 
 .DateSort select {
