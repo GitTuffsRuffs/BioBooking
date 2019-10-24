@@ -19,15 +19,12 @@ class PopupPortal extends React.Component {
     }
 
     render() {
-        console.log("PopupPortal::render(1)", this.popupShadow);
         if(this.popupShadow == null) {
             this.popupShadow = document.getElementById('PopupShadow');
-            console.log("PopupPortal::render(2)", this.popupShadow);
             if(this.popupShadow == null) {
                 return "";
             }
         }
-        console.log("PopupPortal::render(3)", this.popupShadow);
 
         return ReactDOM.createPortal(
             this.props.children,

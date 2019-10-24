@@ -8,21 +8,21 @@ class BioApi {
     cinemasList = [];
     logedin = false;
     eventFunctions = [];
-    token = null;
-    
+    user = null;
+
     constructor() {
         this.auditoriumsPromis = this.getJson("auditoriums");
         this.auditoriumsPromis.then((auditoriums) => this.auditoriumsList = auditoriums);
         this.cinemasPromis = this.getJson("cinemas");
         this.cinemasPromis.then((cinemas) => this.cinemasList = cinemas);
 
-        const token = localStorage.getItem('token');
+        const token = JSON.parse(localStorage.getItem('token'));
         if(token) {
             this.logedin = true;
-            this.token = token;
+            this.user = token;
         }
     }
-
+    
     async wait() {
         await this.auditoriumsPromis;
         await this.cinemasPromis;
@@ -30,8 +30,8 @@ class BioApi {
 
     async getJson(path) {
         const response = await fetch(this.conction+path);
-        if(response.status !== 200) {
-            throw new Error(response.text());
+        if(response.status < 200 || response.status >= 300 ) {
+            throw new Error(await response.text());
         }
         return response.json();
     }
@@ -42,8 +42,8 @@ class BioApi {
             body: formData
         }
         const response = await fetch(this.conction+path, options);
-        if(response.status !== 200) {
-            throw new Error(response.text());
+        if(response.status < 200 || response.status >= 300 ) {
+            throw new Error(await response.text());
         }
         return response.json();
     }
@@ -55,8 +55,8 @@ class BioApi {
         }
         const response = await fetch(this.conction+path, options);
         
-        if(response.status !== 200) {
-            throw new Error(response.text());
+        if(response.status < 200 || response.status >= 300 ) {
+            throw new Error(await response.text());
         }
 
         return response.text();
@@ -104,6 +104,14 @@ class BioApi {
         return this.logedin;
     }
 
+    email() {
+        if(this.user) {
+            return this.user.email;
+        } else {
+            return "";
+        }
+    }
+
     async login(username, password){
         let formData;
         formData = new FormData();
@@ -112,7 +120,7 @@ class BioApi {
         formData.append('password', password);
 
         try {
-            this.token = await this.postString("login", formData);
+            this.user = await this.postJson("login", formData);
         }
         catch
         {
@@ -120,7 +128,7 @@ class BioApi {
         }
 
         this.logedin = true;
-        localStorage.setItem('token', this.token);
+        localStorage.setItem('token', JSON.stringify(this.user));
         this.triggerListener();
         return this.logedin;
     }
@@ -133,7 +141,7 @@ class BioApi {
         formData.append('password', password);
 
         try {
-            this.token = await this.postString("register", formData);
+            this.user = await this.postJson("register", formData);
         }
         catch
         {
@@ -141,6 +149,7 @@ class BioApi {
         }
 
         this.logedin = true;
+        localStorage.setItem('token', JSON.stringify(this.user));
         this.triggerListener();
         return this.logedin;
     }
@@ -148,7 +157,7 @@ class BioApi {
     async reservations() {
         let formData;
         formData = new FormData();
-        formData.append('token', this.token);
+        formData.append('token', this.user.token);
 
         try {
             return this.postJson("reservations", formData);
@@ -159,9 +168,27 @@ class BioApi {
         }
     }
 
+    async addBookingCurrentUSer(showId, seatCount) {
+        let formData = new FormData();
+        formData.append('token', this.user.token);
+        formData.append('show_id', showId);
+        formData.append('seats', seatCount);
+
+        return this.postJson("book", formData); 
+    }
+
+    async addBookingNewUser(showId, seatCount, email) {
+        let formData = new FormData();
+        formData.append('email', email);
+        formData.append('show_id', showId);
+        formData.append('seats', seatCount);
+
+        return this.postJson("book", formData); 
+    }
+
     logout(){
         this.logedin = false;
-        this.token = null;
+        this.user = null;
         localStorage.removeItem('token');
         this.triggerListener();
     }

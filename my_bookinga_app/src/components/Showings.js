@@ -10,10 +10,11 @@ class Showings extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {bookingShowId: 0, movieid: 0, shows: []};
+        this.state = {bookingShow: null, movieid: 0, shows: []};
         this.loadShows = this.loadShows.bind(this);
         this.showBooking = this.showBooking.bind(this);
         this.renderOneShow = this.renderOneShow.bind(this);
+        this.hideBooking = this.hideBooking.bind(this);
     }
     
     async loadShows(movieid) {
@@ -27,18 +28,34 @@ class Showings extends React.Component {
                 }
             }
         }
-        console.log(shows);
         this.setState({ movieid, shows });
     }
 
-    showBooking() {
-        this.setState({ bookingShowId: 1 });
+    showBooking(event) {
+        const showID = +event.currentTarget.getAttribute('data-show-id');
+        let show = null;
+
+        for(const currentShow of this.state.shows){
+            if(currentShow.id === showID) {
+                show = currentShow;
+                break;
+            }
+        }
+
+        if(show === null) {
+            return;
+        }
+
+        this.setState({ bookingShow: show });
         const bookingForm = document.getElementById('BookingForm');
         if(bookingForm) {
             bookingForm.style.display='flex';
         }
         document.getElementById('PopupShadow').style.display='block';
-        console.log("Header Booking");
+    }
+
+    hideBooking() {
+        this.setState({ bookingShow: null }); 
     }
 
     renderOneShow(show){
@@ -54,7 +71,7 @@ class Showings extends React.Component {
                     <span>{show.spoken_language} | Subtitle: {show.subtitle_language}</span> 
                 </span>
                 <span>
-                    {show.seats_left} seats left <button className="BookingButton" onClick={this.showBooking}>Too Booking</button>
+                    {show.seats_left} seats left <button className="BookingButton" data-show-id={show.id} onClick={this.showBooking}>Too Booking</button>
                 </span>
             </li>
         );
@@ -75,7 +92,14 @@ class Showings extends React.Component {
                     {this.state.shows.map(this.renderOneShow)}
                 </ul>
                 <PopupPortal>
-                    {this.state.bookingShowId > 0 ? (<BookingForm />) : ""}
+                    {this.state.bookingShow !== null ? (
+                        <BookingForm 
+                            BioApi={this.props.BioApi} 
+                            movie={this.props.movie} 
+                            show={this.state.bookingShow}
+                            onClose={this.hideBooking}
+                            />) 
+                            : ""}
                 </PopupPortal>
             </>      
         );
