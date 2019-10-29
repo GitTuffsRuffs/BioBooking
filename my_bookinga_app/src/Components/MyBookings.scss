@@ -1,40 +1,49 @@
 .Bookinglist {
-    background-color: rgba(255,255,255,0.7);
-    padding: 0;
-}
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0;
 
-.Bookinglist > li > img {
-    max-width: 75px;
-    margin-right: 10px;
-}
-
-.Bookinglist > li {
+  > li {
     list-style: none;
     display: flex;
     padding: 10px;
     border-bottom: dashed gray 1px;
-}
-
-.Bookinglist > li:hover {
-    background-color: rgba(0, 168, 189, 0.3);
-}
-
-.Bookinglist > li > div > h3 {
-    margin-bottom: 3px;
-}
-
-.Bookinglist > li > div {
-    display: flex;
     flex-direction: column;
-    align-items: stretch;
-    flex-grow: 1;
-}
 
-.Bookinglist > li > div > div {
-    display: flex;
-    flex-direction: row;
-}
+    @media (min-width: 300px) {
+        flex-direction: row;
+    }
 
-.Bookinglist > li > div > div > span:first-child {
-    flex-grow: 1;
+    > &:hover {
+      background-color: rgba(0, 168, 189, 0.3);
+    }
+
+    > img {
+      max-width: 75px;
+      margin-right: 10px;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      flex-grow: 1;
+
+      > h3 {
+        margin-bottom: 3px;
+      }
+
+      > div {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: 440px) {
+          flex-direction: row;
+        }
+
+        > span:first-child {
+          flex-grow: 1;
+        }
+      }
+    }
+  }
 }

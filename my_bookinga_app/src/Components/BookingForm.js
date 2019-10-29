@@ -91,7 +91,7 @@ class BookingForm extends React.Component {
                         <span>Number of tickets: </span>     
                         <input id="ticketCount" name="ticketCount" type="number" min="1" max="10" onChange={this.uppdatePrice}/>
                         <span>
-                            <span id="ticketsPrice">{show.seat_price}</span> SEK
+                            <span id="ticketsPrice">{show.seat_price}</span>&nbsp;SEK
                         </span>
                     </label>
 

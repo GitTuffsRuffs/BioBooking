@@ -10,50 +10,58 @@
     padding: 10px 40px;
     border-radius: 25px;
     position: relative;
+
+    > a {
+        display: inline-block;
+    }
+    
+    > h3 {
+        margin-bottom: 0;
+    }
+
+    > p > span {
+        display: block;
+    }
+
+    > label {
+        display: flex;
+        margin-bottom: 0.5em;
+        text-align: center;
+        align-items: flex-start;
+    
+        > span {
+            display: block;
+            text-align: left;
+            
+            &:first-child {
+                margin-right: 5px;
+            }
+            
+            &:nth-child(3) {
+                flex-grow: 1;
+                text-align: right;    
+            }
+        }
+    }
+
+    input[type="email"] {
+        flex-grow: 1;
+    }
+
+    input[type="submit"] {
+        background-color: #00a8bd;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-top: 20px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
 }
 
-#Booking > label {
-    display: flex;
-    margin-bottom: 0.5em;
-    text-align: center;
-    align-items: flex-end;
-}
-
-#Booking > h3 {
-    margin-bottom: 0;
-}
-
-#Booking > label > span {
-    display: block;
-    text-align: left;
-}
-
-#Booking > label > span:first-child {
-    margin-right: 5px;
-}
-
-#Booking > label > span:nth-child(3) {
-    flex-grow: 1;
-    text-align: right;    
-}
-
-#Booking > p > span {
-    display: block;
-}
-
-#Booking input[type="email"] {
-    flex-grow: 1;
-}
-
-#Booking input[type="submit"] {
-    background-color: #00a8bd;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 20px;
-    cursor: pointer;
-    margin-right: 10px;
+#ticketCount {
+    width: 50px;
 }
 
 #BookingClose {

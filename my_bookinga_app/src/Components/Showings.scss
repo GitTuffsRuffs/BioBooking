@@ -9,28 +9,47 @@
     padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: dashed gray 1px;
-}
+    flex-direction: column;
+    align-items: center;
 
-.Showlist > li:hover {
-    background-color: rgba(0, 168, 189, 0.3);
-}
+    @media (min-width: 440px) {
+        flex-direction: row;
+    }
 
-.Showlist > li > span:first-child {
-    padding: 10px;
-}
+    &:hover {
+        background-color: rgba(0, 168, 189, 0.3);
+    }
 
-.Showlist > li > span:nth-child(2) {
-    flex-grow: 1;
-}
+    > span {
+        &:first-child {
+            padding: 10px;
+        }
+        
+        &:nth-child(2) {
+            flex-grow: 1;
+        }
 
-.Showlist > li > span:last-child {
-    padding: 10px;
+        &:last-child {
+            padding: 10px;
+            text-align: center;
+            min-width: 100px;
+
+            @media (min-width: 440px) {
+                text-align: right;
+            }
+
+            @media (min-width: 590px) {
+                min-width: 210px;
+            }
+        }
+    }
 }
 
 .BookingButton {
     background-color: #00a8bd;
     border: none;
     padding: 5px 10px;
+    margin-left: 5px;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;

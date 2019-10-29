@@ -68,10 +68,11 @@ class Showings extends React.Component {
                 </span>
                 <span>
                     <strong>{show.auditorium.name}</strong><br/>
-                    <span>{show.spoken_language} | Subtitle: {show.subtitle_language}</span> 
+                    <span>{show.spoken_language} | Subtitle:&nbsp;{show.subtitle_language}</span> 
                 </span>
                 <span>
-                    {show.seats_left} seats left <button className="BookingButton" data-show-id={show.id} onClick={this.showBooking}>Too Booking</button>
+                    <span>{show.seats_left} seats left</span>
+                    <button className="BookingButton" data-show-id={show.id} onClick={this.showBooking}>Too Booking</button>
                 </span>
             </li>
         );

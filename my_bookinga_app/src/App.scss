@@ -1,9 +1,17 @@
 #ContentBox {
     width: 100%;
-    padding: 0 15%;
+    padding: 0 5%;
     align-self: center;
     overflow-y: scroll;
     box-sizing: border-box;
+
+    @media (min-width: 550px) {
+        padding: 0 10%;
+    }
+    
+    @media (min-width: 900px) {
+        padding: 0 15%;
+    }
 }
 
 #ContenBox::-webkit-scrollbar {
