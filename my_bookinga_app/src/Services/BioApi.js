@@ -1,6 +1,6 @@
 class BioApi {
     conction = "https://bio.tuffsruffs.se/api/";
-    //const conction = "http://localhost:54426/api/";
+    //conction = "http://localhost:54426/api/";
 
     auditoriumsPromis = null;
     auditoriumsList = [];

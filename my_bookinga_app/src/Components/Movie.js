@@ -2,7 +2,7 @@
 import React from "react";
 import {withRouter} from "react-router-dom";
 import Showings from "./Showings";
-import './Movie.css';
+import './Movie.scss';
 
 class Movie extends React.Component {
 

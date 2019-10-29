@@ -1,6 +1,6 @@
 import React from 'react';
 import {Redirect} from "react-router-dom";
-import './MyBookings.css';
+import './MyBookings.scss';
 
 class MyBookings extends React.Component {
 

@@ -4,7 +4,7 @@ import {withRouter} from "react-router-dom";
 import BookingForm from "./BookingForm";
 import DateSort from "./DateSort";
 import PopupPortal from "./PopupPortal";
-import './Showings.css';
+import './Showings.scss';
 
 class Showings extends React.Component {
 

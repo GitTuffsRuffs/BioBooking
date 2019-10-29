@@ -2,8 +2,7 @@ import React from "react";
 import {NavLink} from "react-router-dom";
 import Login from './Login';
 import PopupPortal from './PopupPortal';
-
-import './Header.css';
+import './Header.scss';
 
 class Header extends React.Component {
     constructor() {

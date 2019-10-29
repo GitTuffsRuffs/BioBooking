@@ -1,6 +1,6 @@
 //Sort movies on Today, Tomorrow and next day...
 import React from 'react';
-import './DateSort.css';
+import './DateSort.scss';
 
 class DateSort extends React.Component {
 

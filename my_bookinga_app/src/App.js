@@ -1,7 +1,7 @@
 //APP Defult window
 import React from 'react';
 import {BrowserRouter as Router} from "react-router-dom";
-import './App.css';
+import './App.scss';
 
 import Header from './Components/Header';
 import ContentBox from './Components/ContectBox';

@@ -5,7 +5,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import DateSort from './DateSort';
 
-import './Movies.css';
+import './Movies.scss';
 
 class Movies extends React.Component {
 

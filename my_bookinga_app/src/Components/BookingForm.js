@@ -1,5 +1,5 @@
 import React from 'react';
-import './BookingForm.css';
+import './BookingForm.scss';
 
 class BookingForm extends React.Component {
 

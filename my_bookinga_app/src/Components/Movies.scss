@@ -1,0 +1,21 @@
+.MovieHolder {
+  margin-top: 40px;
+  width: auto;
+  overflow: hidden;
+}
+
+.MovieGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+
+  > div {
+    width: 150px;
+    margin: 8px;
+
+    img {
+      max-width: 100%;
+      max-height: calc(100% - 1em);
+    }
+  }
+}
