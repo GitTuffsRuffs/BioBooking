@@ -1,6 +1,6 @@
 class BioApi {
-    conction = "https://bio.tuffsruffs.se/api/";
-    //conction = "http://localhost:54426/api/";
+    //conction = "https://bio.tuffsruffs.se/api/";
+    conction = "http://localhost:54426/api/";
 
     auditoriumsPromis = null;
     auditoriumsList = [];

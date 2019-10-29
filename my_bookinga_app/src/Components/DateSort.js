@@ -7,6 +7,7 @@ class DateSort extends React.Component {
     constructor(props) {
         super(props);
         this.state = { cinemas: [] };
+        this.uppdateSort = this.uppdateSort.bind(this);
     }
 
     async componentDidMount() {
@@ -14,16 +15,36 @@ class DateSort extends React.Component {
         this.setState({ cinemas });
     }
 
+    uppdateSort() {
+        const filter = {};
+        filter.date = document.getElementById("Filterdate").value;
+        filter.cinema = document.getElementById("Filtercinema").value;
+        filter.age = document.getElementById("Filterage").value;
+
+        this.props.onChange(filter);
+    }
+
     render() {
         const dateOptions = [
-            (<option value="All">Date: All</option>),
-            (<option value="Monday">Date: Idag</option>),
-            (<option value="Monday">Date: Imorgon</option>),
-            (<option value="Monday">Date: Next</option>)
+            (<option value="All">Date: All</option>)
         ];
 
+        const startdate = new Date(new Date().toDateString());
+        dateOptions.push((<option value={startdate.getTime()}>Today: {startdate.getDate()}/{startdate.getMonth()+1}</option>));
+
+        var loopDate = new Date(startdate);
+        loopDate.setDate(loopDate.getDate()+1);
+        dateOptions.push((<option value={loopDate.getTime()}>Tomorrow: {loopDate.getDate()}/{loopDate.getMonth()+1}</option>));
+
+        const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        for(var i = 0; i <= 5; i++) {
+            loopDate.setDate(loopDate.getDate()+1);
+            dateOptions.push((<option value={loopDate.getTime()}>{weekdays[loopDate.getDay()]}: {loopDate.getDate()}/{loopDate.getMonth()+1}</option>));
+        }
+
         const cinemaOptions = [
-            (<option value="CinemaAll">All Cinemas</option>),
+            (<option value="All">All Cinemas</option>),
         ];
 
         for(const cinema of this.state.cinemas) {
@@ -47,15 +68,15 @@ class DateSort extends React.Component {
         return (
             <div className="DateSort">
                 <div>
-                <select>
+                <select id="Filterdate" onChange={this.uppdateSort}>
                     {dateOptions}
                 </select>
 
-                <select>
+                <select id="Filtercinema" onChange={this.uppdateSort}>
                     {cinemaOptions}
                 </select>
 
-                <select>
+                <select id="Filterage" onChange={this.uppdateSort}>
                     {ageOptions}
                 </select>
                 </div>

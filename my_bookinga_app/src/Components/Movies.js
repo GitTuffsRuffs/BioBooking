@@ -30,10 +30,14 @@ class Movies extends React.Component {
     );
   }
 
+  uppdateSort(filter) {
+    console.log("B:", filter);
+  }
+
   render() {
     return (
       <>
-        <DateSort movie={null} BioApi={this.props.BioApi} />
+        {/*<DateSort movie={null} BioApi={this.props.BioApi} onChange={this.uppdateSort}/>*/}
         <div className="MovieGrid">
             {this.state.movies.map(this.renderOneMoive)}
         </div>
