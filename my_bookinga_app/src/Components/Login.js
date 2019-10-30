@@ -58,7 +58,7 @@ class Login extends React.Component {
 
     render() {
         return (
-            <form id="loginForm" method="post0" onClick={this.maybeClose}>
+            <form id="loginForm" method="post" onClick={this.maybeClose}>
                 <div id="Login">
                     <p>Login</p>
                     <label>
